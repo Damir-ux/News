@@ -1,0 +1,357 @@
+.news-card {
+  background: linear-gradient(135deg, #0f043f 0%, #000000 100%);
+  border-radius: 8px;
+  padding: 16px;
+  color: #d1d5db;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 2000px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+    margin-bottom: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    .header-left {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+    .date-reach {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      .light-text {
+        color: #d1d5db;
+      }
+    }
+
+    .traffic {
+      font-size: 13px;
+      color: #9ca3af;
+
+      .traffic-percent {
+        color: #d1d5db;
+      }
+    }
+
+    .sentiment-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sentiment {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: capitalize;
+
+      &.positive {
+        color: #4ade80;
+        background-color: #064e3b;
+      }
+
+      &.negative {
+        color: #0e0d0d;
+        background-color: #e2dede;
+      }
+
+      &.neutral {
+        color: #facc15;
+        background-color: #78350f;
+      }
+    }
+    .info-button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #6b7280;
+      padding: 0;
+    }
+
+    .info-button:hover {
+      color: #374151;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+    }
+
+    .sentiment-checkbox {
+      width: 16px;
+      height: 16px;
+      accent-color: #18181a;
+      cursor: pointer;
+    }
+  }
+
+  .traffic {
+    font-size: 13px;
+    color: #9ca3af;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #3b82f6;
+    margin: 8px 0;
+    text-align: left;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+    margin-bottom: 8px;
+
+    .domain {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    svg {
+      color: #9ca3af;
+    }
+  }
+
+  .content {
+    font-size: 15px;
+    color: #e5e7eb;
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 100px;
+    position: relative;
+  }
+
+  .content.expanded {
+    max-height: 1000px;
+  }
+
+  .toggle {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 0;
+    margin-top: 8px;
+    color: #1890ff;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left;
+    justify-content: flex-start;
+
+    .arrow-icon {
+      transition: transform 0.3s ease;
+      font-size: 12px;
+    }
+
+    .rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 10px;
+  }
+
+  .tag {
+    border: 1px solid #d9d9d93a;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .tag-icon {
+    margin-right: 4px;
+    font-size: 12px;
+  }
+
+  .show-tags-button {
+    font-size: 12px;
+    padding: 0 6px;
+    align-self: center;
+  }
+
+  .highlight {
+    background-color: #3b82f6;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
+    color: #f0f1f4;
+    font-weight: 500;
+  }
+
+  .original-source-wrapper {
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .original-source-button {
+    color: #3b82f6;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    text-decoration: none;
+    background-color: #414040;
+  }
+
+  .original-source-button:hover {
+    text-decoration: underline;
+  }
+
+  .filter-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+
+    .filter-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #faffffa1;
+      background: none;
+      border: none;
+    }
+  }
+
+  .duplicates-card {
+    margin-top: 12px;
+    border: 1px solid #2c7ded;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+
+    .duplicate-entry {
+      padding: 8px 0;
+      border-bottom: 1px solid #333;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .duplicate-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #3b82f6;
+        margin: 8px 0;
+        text-align: left;
+      }
+
+      .duplicate-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 14px;
+        margin-bottom: 8px;
+
+        .duplicate-domain {
+          color: #60a5fa;
+          text-decoration: underline;
+        }
+
+        .duplicate-domain {
+          color: #60a5fa;
+          text-decoration: underline;
+        }
+
+        svg {
+          color: #9ca3af;
+        }
+      }
+
+      .duplicate-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: 14px;
+        margin-bottom: 12px;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .gap {
+        display: flex;
+        gap: 8px;
+      }
+
+      .duplicate-main {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        .duplicate-text {
+          display: flex;
+          font-size: 12px;
+          color: #d1d5db;
+          margin-bottom: 2px;
+        }
+        .duplicate-date {
+          display: flex;
+          font-size: 12px;
+          color: #d1d5db;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+  .duplicates-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border: none;
+    font-size: 13px;
+
+    .duplicates-count {
+      color: #9ca3af;
+    }
+  }
+  .view-duplicates {
+    color: #edeff1d2;
+    padding: 10px 20px;
+    margin: 0;
+    border: solid 1px #edeff15e;
+    border-radius: 8px;
+    background: none;
+    box-shadow: none;
+    font-size: 14px;
+    height: auto;
+    line-height: 1.5;
+    width: 100%;
+  }
+  .view-duplicates:hover {
+    color: #40a9ff;
+    text-decoration: underline;
+    background: none;
+  }
+}
